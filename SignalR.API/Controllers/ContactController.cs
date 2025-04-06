@@ -82,6 +82,7 @@ namespace SignalR.API.Controllers
 			value.Location = updateContactDto.Location;
 			value.Phone = updateContactDto.Phone;
 			value.FooterDescription = updateContactDto.FooterDescription;
+			value.ContactId = updateContactDto.ContactId;
 
 			_contactService.TUpdate(value);
 
