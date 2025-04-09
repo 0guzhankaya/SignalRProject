@@ -44,7 +44,7 @@ namespace SignalR.API.Controllers
 			return Ok("Kategori başarılı bir şekilde eklendi.");
 		}
 
-		[HttpDelete]
+		[HttpDelete("{id}")]
 		public IActionResult DeleteCategory(int id)
 		{
 			var value = _categoryService.TGetById(id);
@@ -52,7 +52,7 @@ namespace SignalR.API.Controllers
 			return Ok("Kategori başarılı bir şekilde silindi.");
 		}
 
-		[HttpGet("GetCategory")]
+		[HttpGet("{id}")]
 		public IActionResult GetCategory(int id)
 		{
 			var value = _categoryService.TGetById(id);
