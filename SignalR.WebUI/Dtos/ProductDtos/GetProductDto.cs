@@ -1,4 +1,4 @@
-﻿namespace SignalR.DataTransferObjectsLayer.ProductDto
+﻿namespace SignalR.WebUI.Dtos.ProductDtos
 {
 	public class GetProductDto
 	{

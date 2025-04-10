@@ -63,12 +63,13 @@ namespace SignalR.API.Controllers
 				ProductDescription = createProductDto.Description,
 				ImageUrl = createProductDto.ImageUrl,
 				ProductStatus = true,
+				CategoryId = createProductDto.CategoryId,
 			});
 
 			return Ok("Ürün başarılı bir şekilde eklendi.");
 		}
 
-		[HttpDelete]
+		[HttpDelete("{id}")]
 		public IActionResult DeleteProduct(int id)
 		{
 			var value = _productService.TGetById(id);
@@ -79,7 +80,7 @@ namespace SignalR.API.Controllers
 			return Ok(result);
 		}
 
-		[HttpGet("GetProduct")]
+		[HttpGet("{id}")]
 		public IActionResult GetCategory(int id)
 		{
 			var value = _productService.TGetById(id);
@@ -109,6 +110,7 @@ namespace SignalR.API.Controllers
 			value.ProductDescription = updateProductDto.Description;
 			value.ImageUrl = updateProductDto.ImageUrl;
 			value.ProductStatus = updateProductDto.ProductStatus;
+			value.CategoryId = updateProductDto.CategoryId;
 
 			_productService.TUpdate(value);
 			return Ok("Ürün başarılı bir şekilde güncellendi.");

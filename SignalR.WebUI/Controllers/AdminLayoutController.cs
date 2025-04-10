@@ -2,7 +2,7 @@
 
 namespace SignalR.WebUI.Controllers
 {
-	public class AdminLayout : Controller
+	public class AdminLayoutController : Controller
 	{
 		public IActionResult Index()
 		{
