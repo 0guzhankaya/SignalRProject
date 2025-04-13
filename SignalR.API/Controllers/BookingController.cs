@@ -45,7 +45,7 @@ namespace SignalR.API.Controllers
 			return Ok("Rezervasyon başarılı bir şekilde eklendi.");
 		}
 
-		[HttpDelete]
+		[HttpDelete("{id}")]
 		public IActionResult DeleteBooking(int id)
 		{
 			var value = _bookingService.TGetById(id);
@@ -53,7 +53,7 @@ namespace SignalR.API.Controllers
 			return Ok("Rezervasyon başarılı bir şekilde silindi.");
 		}
 
-		[HttpPut]
+		[HttpPut("{id}")]
 		public IActionResult UpdateBooking(UpdateBookingDto updateBookingDto)
 		{
 			Booking booking = new Booking()
@@ -70,7 +70,7 @@ namespace SignalR.API.Controllers
 			return Ok("Rezervasyon başarılı bir şekilde güncellendi.");
 		}
 
-		[HttpGet("GetBooking")]
+		[HttpGet("{id}")]
 		public IActionResult GetBooking(int id)
 		{
 			var value = _bookingService.TGetById(id);
