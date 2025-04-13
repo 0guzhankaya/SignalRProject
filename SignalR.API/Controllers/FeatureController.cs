@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SignalR.BusinessLayer.Abstract;
 using SignalR.DataTransferObjectsLayer.FeatureDto;
@@ -48,7 +47,7 @@ namespace SignalR.API.Controllers
 			return Ok("Öne çıkarılan başarılı bir şekilde eklendi.");
 		}
 
-		[HttpDelete]
+		[HttpDelete("{id}")]
 		public IActionResult DeleteFeature(int id)
 		{
 			var value = _featureService.TGetById(id);
@@ -58,7 +57,7 @@ namespace SignalR.API.Controllers
 			return Ok("Öne çıkarılan başarılı bir şekilde silindi.");
 		}
 
-		[HttpGet("GetFeature")]
+		[HttpGet("{id}")]
 		public IActionResult GetFeature(int id)
 		{
 			var value = _featureService.TGetById(id);
