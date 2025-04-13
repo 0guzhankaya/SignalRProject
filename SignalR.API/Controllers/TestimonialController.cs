@@ -47,7 +47,7 @@ namespace SignalR.API.Controllers
 			return Ok("Müşteri yorum bilgisi başarılı bir şekilde eklendi.");
 		}
 
-		[HttpDelete]
+		[HttpDelete("{id}")]
 		public IActionResult DeleteTestimonial(int id)
 		{
 			var value = _testimonialService.TGetById(id);
@@ -55,7 +55,7 @@ namespace SignalR.API.Controllers
 			return Ok("Müşteri yorum bilgisi başarılı bir şekilde silindi.");
 		}
 
-		[HttpGet("GetTestimonial")]
+		[HttpGet("{id}")]
 		public IActionResult GetTestimonial(int id)
 		{
 			var value = _testimonialService.TGetById(id);
